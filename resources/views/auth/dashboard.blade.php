@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{$title}}</title>
-    @vite('resources/css/app.css')
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    @vite('resources/css/app.css')
 </head>
 <body>
-    <div class="container w-[100%] lg:w-[80%] py-12 rounded-lg mx-auto">
+    <div class="container lg:w-[80%] py-12 rounded-lg mx-auto">
         <div class="flex justify-between">
             <div class="navbar ">
                 <h1 class="text-[18px]">Hi, <span class="font-bold">{{$user->name}}</span></h1>
@@ -24,6 +24,7 @@
                       Settings
                     </button>
                     <div class="dropdown-menu"aria-labelledby="dropdownMenuButton">
+                      {{-- <a class="dropdown-item" href="{{route('dashboard')}}">Dashboard</a> --}}
                       <a class="dropdown-item block lg:hidden" href="{{route('dashboard')}}">Dashboard</a>
                       <a class="dropdown-item block lg:hidden" href="{{route('task')}}">Taks</a>
                       <a class="dropdown-item" href="{{route('detail_profile')}}">Profile</a>
@@ -35,18 +36,18 @@
         <div class="justify-center mx-auto gap-10 lg:mb-[10px]  lg:flex">
             <img src="{{ asset('images/welcome.png') }}" alt="" class="w-[100%] h-[300px] lg:w-[200px] lg:h-[200px]">
             <div class="flex flex-col justify-center items-start">
-                <h1 class="font-bold text-sm lg:text-3xl">Task Management & To-Do List</h1>
-                <p class="text-sm">Lakukan task sekarang !</p>
+                <h1 class="mb-2 font-bold text-sm lg:text-3xl">Task Management & To-Do List</h1>
+                <p class="mb-2 text-sm">Lakukan task sekarang !</p>
                 <a href="{{route('task')}}" class="no-underline	py-2 bg-blue-500 text-white px-4 rounded-md hover:bg-blue-700">Tambah Task</a>
             </div>
         </div>
         <div class="mt-5">
-            <h1 class="font-bold text-[24px]">Task Category</h1>
+            <h1 class="font-bold text-[24px] mb-2">Task Category</h1>
             @foreach ($categories as $category)
-            <div class="border-2 shadow-lg my-2 rounded-lg">
-                <div class="p-3">
-                    <h2>{{ $category->category_name }} ({{ $category->tasks->count() }} tasks)</h2>
-                    <ul>
+            <div class="border-2 mb-3 shadow-lg  rounded-lg">
+                <div class="py-4 px-3">
+                    <h2 class="font-bold text-[24px] mb-3">{{ $category->category_name }} ({{ $category->tasks->count() }} tasks)</h2>
+                    <ul class="">
                         @foreach ($category->tasks as $task)
                             <li>{{ $task->title }}</li>
                         @endforeach
