@@ -27,7 +27,7 @@ Tech :
 
 <img width="1440" alt="image" src="https://github.com/arqprtma/laravel/assets/93786126/b8f06330-ce39-4bad-aab6-8b8d3aa7387f">
 
-# All Tasks and Comments #
+# All Tasks, Comments, and Pagination #
 
 <img width="1440" alt="image" src="https://github.com/arqprtma/laravel/assets/93786126/a07bd1d3-3737-4db5-a4fa-0953cc1abe2e">
 
